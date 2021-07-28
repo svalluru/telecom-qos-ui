@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'crui';
+
+  user = {
+    username: '',
+    password: ''
+  };
+  onSubmit(theForm: NgForm) {
+    this.user.username = theForm.value.username;
+    this.user.password = theForm.value.password;
+  
+    console.log(this.user);
+  
+  }
 }
+
