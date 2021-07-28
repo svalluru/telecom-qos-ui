@@ -21,8 +21,11 @@ export class CloseaccountComponent implements OnInit {
     var postdata = {"phoneno" : "6508621000","unlock" : "false","eDelivery" : "false"};
     
     postdata.phoneno = theForm.value.phoneno;
-    postdata.unlock = theForm.value.unlock.length>0 ? theForm.value.unlock : 'false';
-    postdata.eDelivery = theForm.value.edelivery.length>0 ? theForm.value.edelivery : 'false';
+    postdata.unlock = theForm.value.unlock;
+    postdata.eDelivery = theForm.value.edelivery;
+
+    postdata.unlock = postdata.unlock.length == 0 ? 'false' : 'true';
+    postdata.eDelivery = postdata.eDelivery.length == 0 ? 'false' : 'true';
 
     console.log(postdata);
     this.headers = new HttpHeaders({'Content-Type' : 'application/vnd.kafka.json.v2+json'});
@@ -31,10 +34,10 @@ export class CloseaccountComponent implements OnInit {
         "value" : postdata
       }]
     },{headers: this.headers}).subscribe(res => {
-      //alert("Request created");
+      alert("Request created");
     }, error =>{
       console.log('Something went wrong');
     });
-  
+    theForm.resetForm();
   }
 }
