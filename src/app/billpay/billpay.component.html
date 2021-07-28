@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit(theForm)" #theForm="ngForm">
+    <br>
+    <div class="col-md-3">
+        <label for="phoneno">Phone Number</label>
+        <input ngModel name="phoneno" type="text" id="phoneno" class="form-control" placeholder="Enter Phone Number" aria-describedby="inputGroup-sizing-default">
+    </div> <br>
+    <div class="col-md-3">
+        <label for="amount">Amount</label>
+        <input ngModel name="amount" type="text" id="amount" class="form-control" placeholder="Enter Amount" aria-describedby="inputGroup-sizing-default">
+    </div> <br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

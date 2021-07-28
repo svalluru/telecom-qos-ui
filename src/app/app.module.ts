@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CloseaccountComponent } from './telecom/closeaccount/closeaccount.component';
 import { StatusaccountComponent } from './telecom/statusaccount/statusaccount.component';
+import { BillpayComponent } from './billpay/billpay.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CloseaccountComponent,
-    StatusaccountComponent
+    StatusaccountComponent,
+    BillpayComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,6 @@ import { StatusaccountComponent } from './telecom/statusaccount/statusaccount.co
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [CloseaccountComponent,StatusaccountComponent]
+  bootstrap: [CloseaccountComponent,StatusaccountComponent,BillpayComponent]
 })
 export class AppModule { }
